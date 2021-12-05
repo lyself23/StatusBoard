@@ -1,0 +1,290 @@
+﻿@page "/Charts"
+@using System.Globalization
+
+<div class="container-fluid px-4">
+    <h1 class="mt-4">Charts</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+        <li class="breadcrumb-item active">Charts</li>
+    </ol>
+    <div class="card mb-4">
+        <div class="card-body">
+            Chart.js is a third party plugin that is used to generate the charts in this template. The charts below have been customized - for further customization options, please visit the official
+            <a target="_blank" href="https://www.chartjs.org/docs/latest/">Chart.js documentation</a>
+            .
+        </div>
+    </div>
+    <div class="card mb-4">
+        <div class="card-header">
+            <i class="fas fa-chart-area me-1"></i>
+            Area Chart Example
+        </div>
+        <div class="card-body">
+            <RadzenChart>
+                <RadzenAreaSeries Smooth="@smooth" Data="@revenue20192" CategoryProperty="Date" Title="2019" ValueProperty="Revenue" RenderingOrder="1">
+                </RadzenAreaSeries>
+                <RadzenAreaSeries Smooth="@smooth" Data="@revenue20202" CategoryProperty="Date" Title="2020" LineType="LineType.Dashed" ValueProperty="Revenue">
+                </RadzenAreaSeries>
+                <RadzenCategoryAxis Padding="20" FormatString="{0:MMM}" />
+                <RadzenValueAxis Formatter="@FormatAsUSD">
+                    <RadzenGridLines Visible="true" />
+                    <RadzenAxisTitle Text="Revenue in USD" />
+                </RadzenValueAxis>
+            </RadzenChart>
+        </div>
+        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-chart-bar me-1"></i>
+                    Bar Chart Example
+                </div>
+                <div class="card-body">
+                    <RadzenChart>
+                        <RadzenColumnSeries Data="@revenue2020" CategoryProperty="Quarter" Title="2020" LineType="LineType.Dashed" ValueProperty="Revenue" />
+                        <RadzenColumnSeries Data="@revenue2019" CategoryProperty="Quarter" Title="2019" ValueProperty="Revenue" />
+                        <RadzenColumnOptions Radius="5" />
+                        <RadzenValueAxis Formatter="@FormatAsUSD">
+                            <RadzenGridLines Visible="true" />
+                            <RadzenAxisTitle Text="Revenue in USD" />
+                        </RadzenValueAxis>
+                    </RadzenChart>
+                </div>
+                <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-chart-pie me-1"></i>
+                    Pie Chart Example
+                </div>
+                <div class="card-body">
+                    <RadzenChart>
+                        <RadzenPieSeries Data="@revenue" Title="Revenue" CategoryProperty="Quarter" ValueProperty="Revenue" />
+                    </RadzenChart>
+                </div>
+                <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    bool smooth = true;
+    class AreaDataItem
+    {
+        public DateTime Date { get; set; }
+        public double Revenue { get; set; }
+    }
+
+
+    class DataItem
+    {
+        public string Quarter { get; set; }
+        public double Revenue { get; set; }
+    }
+
+    DataItem[] revenue = new DataItem[] {
+        new DataItem
+        {
+            Quarter = "Q1",
+            Revenue = 30000
+        },
+        new DataItem
+        {
+            Quarter = "Q2",
+            Revenue = 40000
+        },
+        new DataItem
+        {
+            Quarter = "Q3",
+            Revenue = 50000
+        },
+        new DataItem
+        {
+            Quarter = "Q4",
+            Revenue = 80000
+        },
+    };
+
+    string FormatAsUSD(object value)
+    {
+        return ((double)value).ToString("C0", CultureInfo.CreateSpecificCulture("en-US"));
+    }
+
+    DataItem[] revenue2019 = new DataItem[] {
+        new DataItem
+        {
+            Quarter = "Q1",
+            Revenue = 234000
+        },
+        new DataItem
+        {
+            Quarter = "Q2",
+            Revenue = 284000
+        },
+        new DataItem
+        {
+            Quarter = "Q3",
+            Revenue = 274000
+        },
+        new DataItem
+        {
+            Quarter = "Q4",
+            Revenue = 294000
+        },
+    };
+
+    DataItem[] revenue2020 = new DataItem[] {
+        new DataItem
+        {
+            Quarter = "Q1",
+            Revenue = 254000
+        },
+        new DataItem
+        {
+            Quarter = "Q2",
+            Revenue = 324000
+        },
+        new DataItem
+        {
+            Quarter = "Q3",
+            Revenue = 354000
+        },
+        new DataItem
+        {
+            Quarter = "Q4",
+            Revenue = 394000
+        },
+
+    };
+
+    AreaDataItem[] revenue20192 = new AreaDataItem[] {
+        new AreaDataItem
+        {
+            Date = DateTime.Parse("2019-01-01"),
+            Revenue = 234000
+        },
+        new AreaDataItem
+        {
+            Date = DateTime.Parse("2019-02-01"),
+            Revenue = 269000
+        },
+        new AreaDataItem
+        {
+            Date = DateTime.Parse("2019-03-01"),
+            Revenue = 233000
+        },
+        new AreaDataItem
+        {
+            Date = DateTime.Parse("2019-04-01"),
+            Revenue = 244000
+        },
+        new AreaDataItem
+        {
+            Date = DateTime.Parse("2019-05-01"),
+            Revenue = 214000
+        },
+        new AreaDataItem
+        {
+            Date = DateTime.Parse("2019-06-01"),
+            Revenue = 253000
+        },
+        new AreaDataItem
+        {
+            Date = DateTime.Parse("2019-07-01"),
+            Revenue = 274000
+        },
+        new AreaDataItem
+        {
+            Date = DateTime.Parse("2019-08-01"),
+            Revenue = 284000
+        },
+        new AreaDataItem
+        {
+            Date = DateTime.Parse("2019-09-01"),
+            Revenue = 273000
+        },
+        new AreaDataItem
+        {
+            Date = DateTime.Parse("2019-10-01"),
+            Revenue = 282000
+        },
+        new AreaDataItem
+        {
+            Date = DateTime.Parse("2019-11-01"),
+            Revenue = 289000
+        },
+        new AreaDataItem
+        {
+            Date = DateTime.Parse("2019-12-01"),
+            Revenue = 294000
+        }
+    };
+
+    AreaDataItem[] revenue20202 = new AreaDataItem[] {
+        new AreaDataItem
+        {
+            Date = DateTime.Parse("2019-01-01"),
+            Revenue = 334000
+        },
+        new AreaDataItem
+        {
+            Date = DateTime.Parse("2019-02-01"),
+            Revenue = 369000
+        },
+        new AreaDataItem
+        {
+            Date = DateTime.Parse("2019-03-01"),
+            Revenue = 333000
+        },
+        new AreaDataItem
+        {
+            Date = DateTime.Parse("2019-04-01"),
+            Revenue = 344000
+        },
+        new AreaDataItem
+        {
+            Date = DateTime.Parse("2019-05-01"),
+            Revenue = 314000
+        },
+        new AreaDataItem
+        {
+            Date = DateTime.Parse("2019-06-01"),
+            Revenue = 353000
+        },
+        new AreaDataItem
+        {
+            Date = DateTime.Parse("2019-07-01"),
+            Revenue = 374000
+        },
+        new AreaDataItem
+        {
+            Date = DateTime.Parse("2019-08-01"),
+            Revenue = 384000
+        },
+        new AreaDataItem
+        {
+            Date = DateTime.Parse("2019-09-01"),
+            Revenue = 373000
+        },
+        new AreaDataItem
+        {
+            Date = DateTime.Parse("2019-10-01"),
+            Revenue = 382000
+        },
+        new AreaDataItem
+        {
+            Date = DateTime.Parse("2019-11-01"),
+            Revenue = 389000
+        },
+        new AreaDataItem
+        {
+            Date = DateTime.Parse("2019-12-01"),
+            Revenue = 394000
+        }
+    };
+}
