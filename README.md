@@ -4,6 +4,7 @@
 ![image](https://user-images.githubusercontent.com/67846924/144750599-8ab17601-315c-43b9-b45c-25d2794fac0e.png)
 
 
+
 2. 빌드순서
   - StatusBoardLibrary 빌드 - 해당 라이브러리를 윈폼과 웹서버에서 공유
   - StatusBoardWinform 빌드
