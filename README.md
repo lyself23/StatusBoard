@@ -9,7 +9,7 @@
 2. Git 리포지토리 복제
   - git clone https://github.com/lyself23/StatusBoard.git
 
-2. 빌드순서
+2. 빌드순서 : 추후 winform이나 웹만 빌드 시 라이브러리도 같이 빌드되도록 변경 
   - StatusBoardLibrary 빌드 - 해당 라이브러리를 윈폼과 웹서버에서 공유
   - StatusBoardWinform 빌드
   - StatusBoardBlazor 빌드
