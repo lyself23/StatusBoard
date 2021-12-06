@@ -17,7 +17,7 @@ Setup
 2. StatusBoardWinform 빌드
 3. StatusBoardBlazor 빌드
 
-최초빌드시에만 위의 순서대로 하고 그 이후에는 winform이나 blazor 단독 
+최초빌드 시에만 위의 순서대로 하고 그 이후에는 winform이나 blazor 단독 빌드
 
 
 
