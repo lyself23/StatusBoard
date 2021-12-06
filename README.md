@@ -1,6 +1,7 @@
 # StatusBoard
 1. 개발환경
-  - VisualStudio 2022 - ASP.NET 및 웹개발, .NET 데스크톱 개발
+  - IDE : VisualStudio 2022 - ASP.NET 및 웹개발, .NET 데스크톱 개발
+  - .
 ![image](https://user-images.githubusercontent.com/67846924/144750599-8ab17601-315c-43b9-b45c-25d2794fac0e.png)
 
 
