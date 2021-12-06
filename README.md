@@ -1,8 +1,3 @@
-Statusboard
-=================
-
-> Display your Asana projects &amp; their details using Panic's Statusboard app.
-
 개발환경
 ------------
 
@@ -14,7 +9,7 @@ Statusboard
 
 
 Setup
-----
+------------
 
     git clone https://github.com/lyself23/StatusBoard.git
 
@@ -28,7 +23,7 @@ Setup
 
     
 사용된 컴포넌트
------
+------------
 
 1. Radzen Blazor 컴포넌트 (https://blazor.radzen.com/get-started)
 
