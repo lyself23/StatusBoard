@@ -7,7 +7,7 @@
 
 
 2. Git 리포지토리 복제
-  -  https://github.com/lyself23/StatusBoard.git
+  - git clone https://github.com/lyself23/StatusBoard.git
 
 2. 빌드순서
   - StatusBoardLibrary 빌드 - 해당 라이브러리를 윈폼과 웹서버에서 공유
