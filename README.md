@@ -24,6 +24,5 @@ Setup
     
 사용된 컴포넌트
 ------------
-
-1. Radzen Blazor 컴포넌트 (https://blazor.radzen.com/get-started)
+ > Radzen Blazor 컴포넌트 (https://blazor.radzen.com/get-started)
 
