@@ -13,5 +13,5 @@
   - StatusBoardBlazor 빌드
 
 
-3. 컴포넌트 
+3. 사용된 컴포넌트 
   - Radzen Blazor 컴포넌트 (https://blazor.radzen.com/get-started)
